@@ -2070,6 +2070,7 @@ if (typeof Slick === "undefined") {
       if (activeCellNode !== null) {
         makeActiveCellNormal();
         $(activeCellNode).removeClass("active");
+        $(activeCellNode).parent().removeClass("active-row");
       }
 
       var activeCellChanged = (activeCellNode !== newCell);
@@ -2080,6 +2081,7 @@ if (typeof Slick === "undefined") {
         activeCell = activePosX = getCellFromNode(activeCellNode);
 
         $(activeCellNode).addClass("active");
+        $(activeCellNode).parent().addClass("active-row");
 
         if (options.editable && editMode && isCellPotentiallyEditable(activeRow, activeCell)) {
           clearTimeout(h_editorLoader);
